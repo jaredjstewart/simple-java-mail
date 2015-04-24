@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+group = 'org.codemonkey.simplejavamail'
+archivesBaseName='simple-java-mail'
+description = "Simple Java Mail"
+
+ant.importBuild('build.xml')
+
+repositories {
+     maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+
+}
+
+dependencies {
+    compile group: 'log4j', name: 'log4j', version:'1.2.16'
+    compile group: 'javax.mail', name: 'mail', version:'1.4.1'
+}
